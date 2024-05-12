@@ -9,11 +9,14 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "dev": "vite build --watch",
+    "build": "tsc && vite build",
     "build:watch": "tsc -w",
     "lint": "biome check src",
     "lint:fix": "biome check --apply src",
-    "lint:ci": "biome ci src"
+    "lint:ci": "biome ci src",
+    "test": "vitest",
+    "test:cov": "vitest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +24,11 @@
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
     "@types/node": "^20.12.11",
-    "typescript": "^5.4.5"
+    "@vitest/coverage-v8": "^1.6.0",
+    "glob": "^10.3.15",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
   }
 }

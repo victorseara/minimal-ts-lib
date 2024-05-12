@@ -12,6 +12,9 @@
 	},
 	"linter": {
 		"enabled": true,
+		"include": [
+			"src"
+		],
 		"rules": {
 			"recommended": true,
 			"suspicious": {
@@ -30,8 +33,7 @@
 						]
 					}
 				}
-			},
-			"complexity": {}
+			}
 		}
 	},
 	"javascript": {
