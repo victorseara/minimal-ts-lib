@@ -8,6 +8,18 @@
     "dist"
   ],
   "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+<your_repo_url>.git"
+  },
+  "bugs": {
+    "email": "<your_email>@<your_email_provider>"
+  },
+  "homepage": "<your_lib_docs_url>",
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
