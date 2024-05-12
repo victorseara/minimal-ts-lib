@@ -2,8 +2,8 @@
   "name": "ts-lib-starter",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
