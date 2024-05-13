@@ -1,0 +1,52 @@
+name: Pull Request
+on: [pull_request]
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 21
+          cache: 'pnpm'
+      - run: pnpm install
+      - uses: actions/upload-artifact@v2
+        with:
+          name: node-modules
+          path: node_modules/
+
+  build:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v2
+        with:
+          name: node-modules
+          path: node_modules/
+      - run: pnpm build
+
+  lint:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v2
+        with:
+          name: node-modules
+          path: node_modules/
+      - run: pnpm lint
+
+  test:
+    needs: prepare
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v2
+        with:
+          name: node-modules
+          path: node_modules/
+      - run: pnpm test
