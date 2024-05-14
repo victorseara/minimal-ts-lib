@@ -1,5 +1,5 @@
 {
-  "name": "ts-lib-starter",
+  "name": "<library_name>",
   "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+<your_repo_url>.git"
+    "url": "<repo_url>"
   },
   "bugs": {
-    "email": "<your_email>@<your_email_provider>"
+    "email": "<author_email>"
   },
-  "homepage": "<your_lib_docs_url>",
+  "homepage": "<homepage_url>",
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
@@ -32,7 +32,7 @@
     "release": "pnpm build && changesets publish"
   },
   "keywords": [],
-  "author": "",
+  "author": "<author_name> <author_email>",
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.7.3",

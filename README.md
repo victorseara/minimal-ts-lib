@@ -1,36 +1,27 @@
-# TypeScript Library Starter
+# Minimal Typescript library
 
-This project is a TypeScript library starter template with some opinionated configurations. It includes the following tools:
+This project is a minimal Typescript library template with some opinionated configurations. It includes the following configurations:
 
 - [Vite](https://vitejs.dev/): A build tool that aims to provide a faster and leaner development experience for modern web projects;
 - [Vitest](https://vitest.dev/): A test runner designed for Vite;
 - [Biome](https://github.com/biomejs/biome): A tool for managing TypeScript projects;
 - [TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that compiles to plain JavaScript;
 - [pnpm](https://pnpm.io/): A fast, disk space-efficient package manager;
+- [changesets](https://github.com/changesets/changesets): A tool to manage versioning and changelogs with a focus on multi-package repositories;
+- GitHub Actions: ci and publish workflows configured;
 
-## Building the Project
+## Using the template
 
-To build the project, run the following command:
+To use this template, you need to make the following adjustments:
 
-```sh
-npm run build
+### Update package.json
 
-This will compile your TypeScript code and bundle it using Vite.
+- Replace `<library_name>` with your library name (e.g: `@my-org/my-lib`);
+Replace `<repo_url>` with your repo URL (e.g: `https://github.com/my-org/my-lib.git`);
+- Replace `<author_email>` with your email;
+- Replace `<homepage_url>` with your homepage or README file;
+- Replace `<author_name>` with your name;
 
-Running Tests
-To run the tests, use the following command:
+### Configure GitHub actions
 
-To generate a coverage report, use:
-
-Linting
-To lint your code, use the following command:
-
-To automatically fix linting errors, use:
-
-Contributing
-Contributions are welcome! Please read the contributing guidelines before getting started.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-```
+- Configure the following secrets in your repository: `GITHUB_TOKEN` and `NPM_TOKEN` - see instructions here: [GitHub](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) / [npm](https://docs.npmjs.com/creating-and-viewing-access-tokens)
