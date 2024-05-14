@@ -12,11 +12,11 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      formats: ['es'],
+      formats: ['es', 'cjs'],
     },
     rollupOptions: {
       input: Object.fromEntries(
-        globSync('src/**/*.{ts,tsx}', { ignore: ignoreFiles }).map((file) => [
+        globSync('src/**/*.ts', { ignore: ignoreFiles }).map((file) => [
           path.relative(
             'src',
             file.slice(0, file.length - path.extname(file).length),
@@ -24,11 +24,18 @@ export default defineConfig({
           fileURLToPath(new URL(file, import.meta.url)),
         ]),
       ),
-      output: {
-        assetFileNames: 'assets/[name][extname]',
-        entryFileNames: '[name].js',
-        dir: outDir,
-      },
+      output: [
+        {
+          dir: outDir,
+          format: 'es',
+          entryFileNames: '[name].mjs',
+        },
+        {
+          dir: outDir,
+          format: 'cjs',
+          entryFileNames: '[name].cjs',
+        },
+      ],
     },
   },
 });

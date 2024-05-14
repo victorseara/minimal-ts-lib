@@ -1,6 +1,7 @@
 {
   "name": "<library_name>",
   "version": "0.0.0",
+  "license": "MIT",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,12 +15,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "<repo_url>"
+    "url": "git+<repo_url>.git"
   },
   "bugs": {
     "email": "<author_email>"
   },
   "homepage": "<homepage_url>",
+  "author": "<author_name> <author_email>",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
@@ -31,9 +40,6 @@
     "test:cov": "vitest --coverage",
     "release": "pnpm build && changesets publish"
   },
-  "keywords": [],
-  "author": "<author_name> <author_email>",
-  "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.7.3",
     "@changesets/cli": "^2.27.1",
